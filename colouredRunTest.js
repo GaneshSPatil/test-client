@@ -1,4 +1,5 @@
 var colors = require('colors');
+var lib = require('./code.js').lib;
 
 colors.setTheme({
   silly: ['rainbow'],
@@ -51,7 +52,7 @@ var runTests = function(test,methodNames,option){
 		console.log('--------'.data);
 		console.log('-->'.info,name.info.bold.bold);
 		try{
-			member();
+			member(lib);
 		}catch(error){
 			failed++;
 			console.log(error.stack.error);
